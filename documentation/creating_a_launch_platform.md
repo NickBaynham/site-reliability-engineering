@@ -80,3 +80,12 @@ ssh-add ~/.ssh/id_rsa
 ```
 git clone git@github.com:NickBaynham/sre-terraform.git
 ```
+
+## 8. Git Configuration to push changes
+```
+ export git_user="Your Name"
+ export git_email="you@example.com" # paraterized setup scripts
+ git config --global user.email "$git_email"
+ git config --global user.name "$git_user"
+ git push
+```
