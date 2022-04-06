@@ -43,4 +43,12 @@ Sources: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-
 2. I have 2.25.1 - no need to make changes
 
 ## Installing Terraform and Cloud Platform CLI
-1. 
+Reference: https://cloudlinuxtech.com/install-terraform-on-ubuntu-uninstall-terraform/
+apt upgrade
+apt install terraform
+terraform -v # currently 1.1.7
+```
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+apt update
+```
