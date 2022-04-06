@@ -37,12 +37,12 @@ Sources: https://linuxconfig.org/how-to-update-ubuntu-packages-on-ubuntu-20-04-f
 7. Remove unneeded packages: apt autoremove -y
 8. Reboot the instance: poweroff then restart from the console
 
-### Installing Git
+### 3. Installing Git
 Sources: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04
 1. Check if already installed: git --version
 2. I have 2.25.1 - no need to make changes
 
-## Installing Terraform and Cloud Platform CLI
+## 4. Installing Terraform
 Reference: https://cloudlinuxtech.com/install-terraform-on-ubuntu-uninstall-terraform/
 apt upgrade
 apt install terraform
@@ -51,4 +51,14 @@ terraform -v # currently 1.1.7
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 apt update
+```
+
+## 5. Installing Amazon Cloud CLI
+Reference: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+```
+apt install unzip -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install
+aws --version # currently 2.5.2
 ```
