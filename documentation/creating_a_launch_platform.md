@@ -54,7 +54,9 @@ apt update
 ```
 
 ## 5. Installing Amazon Cloud CLI
-Reference: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+References: 
+- https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+- https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 ```
 apt install unzip -y
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
