@@ -89,3 +89,6 @@ git clone git@github.com:NickBaynham/sre-terraform.git
  git config --global user.name "$git_user"
  git push
 ```
+
+## 9. Provision Terraform State for each Cluster
+Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/shared_state/README.md
