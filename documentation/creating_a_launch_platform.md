@@ -42,7 +42,7 @@ Sources: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-
 1. Check if already installed: git --version
 2. I have 2.25.1 - no need to make changes
 
-## 4. Installing Terraform
+### 4. Installing Terraform
 Reference: https://cloudlinuxtech.com/install-terraform-on-ubuntu-uninstall-terraform/
 apt upgrade
 apt install terraform
@@ -53,7 +53,7 @@ apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases
 apt update
 ```
 
-## 5. Installing Amazon Cloud CLI
+### 5. Installing Amazon Cloud CLI
 References: 
 - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
@@ -63,4 +63,20 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 ./aws/install
 aws --version # currently 2.5.2
+```
+### 6. Generating a new SSH Key
+References: 
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- https://superuser.com/questions/478798/running-ssh-keygen-without-human-interaction
+```
+ssh-keygen -t rsa -b 4096 -q -f "$HOME/.ssh/id_rsa" -N ""
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+- Add the public ssh key to your github account
+
+
+### 7. Clone the Terraform Repository
+```
+git clone git@github.com:NickBaynham/sre-terraform.git
 ```
