@@ -91,4 +91,7 @@ git clone git@github.com:NickBaynham/sre-terraform.git
 ```
 
 ## 9. Provision Terraform State for each Cluster
-Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/shared_state/README.md
+- Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/shared_state/README.md
+
+## 10. Provision the Cluster Network
+- Execute the steps in: https://github.com/NickBaynham/sre-terraform/tree/main/clusters-vpc
