@@ -101,7 +101,7 @@ git clone git@github.com:NickBaynham/sre-terraform.git
 
 ## 12. Install and Configure AWS CLI
 ```
-apt install awscli
+apt install awscli -y
 aws --version
 aws configure
 ```
