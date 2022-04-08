@@ -105,3 +105,9 @@ apt install awscli
 aws --version
 aws configure
 ```
+## 13. Retrieve the cluster kubeconfig file
+```
+aws eks --region $(terraform output aws_region) update-kubeconfig --name $(terraform output cluster_full_name)
+terraform output authconfig | kubectl -n kube-system create -f -
+kubeconfig get nodes
+```
