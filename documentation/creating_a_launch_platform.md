@@ -150,6 +150,6 @@ Note: You should verify on the AWS console that destroy has taken effect correct
 apt-get update
 apt-get install python3 -y
 apt-get install python3-pip -y
-pip3 install virtualenv -y
+pip3 install virtualenv
 ```
 
