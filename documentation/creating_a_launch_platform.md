@@ -144,3 +144,12 @@ terraform destroy
 
 ```
 Note: You should verify on the AWS console that destroy has taken effect correctly
+
+## 16. Installing Required Tools for Ansible Configuration Management
+```
+apt-get update
+apt-get install python3
+apt-get install python3-pip
+pip3 install virtualenv
+```
+
