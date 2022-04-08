@@ -138,7 +138,7 @@ aws s3 rm s3://nbaynham-vpc-terraform-state --recursive
 aws s3 rb s3://nbaynham-terraform-state --force
 aws s3 rb s3://nbaynham-vpc-terraform-state --force
 
-cd ~/sre-terraform/shared-state
+cd ~/sre-terraform/shared_state
 terraform init
 terraform destroy
 
