@@ -95,3 +95,7 @@ git clone git@github.com:NickBaynham/sre-terraform.git
 
 ## 10. Provision the Cluster Network
 - Execute the steps in: https://github.com/NickBaynham/sre-terraform/tree/main/clusters-vpc
+
+## 11. Provision the Cluster Infrastructure
+- Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/clusters/README.md
+- 
