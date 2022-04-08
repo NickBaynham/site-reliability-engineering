@@ -143,3 +143,4 @@ terraform init
 terraform destroy
 
 ```
+Note: You should verify on the AWS console that destroy has taken effect correctly
