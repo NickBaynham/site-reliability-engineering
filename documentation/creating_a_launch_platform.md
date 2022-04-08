@@ -111,3 +111,24 @@ aws eks --region $(terraform output aws_region) update-kubeconfig --name $(terra
 terraform output authconfig | kubectl -n kube-system create -f -
 kubeconfig get nodes
 ```
+## 14. Cleaning Up and destroying infrastructure resources
+```
+cd ~/sre-terraform/clusters
+terraform init
+terraform destroy
+
+cd ~/sre-terraform/clusters-vpc
+terraform init
+terraform destroy
+
+# if you need to destory shared state:
+aws s3 rm s3://nbaynham-terraform-state --recursive
+aws s3 rm s3://nbaynham-vpc-terraform-state --recursive
+aws s3 rb s3://nbaynham-terraform-state --force
+aws s3 rb s3://nbaynham-vpc-terraform-state --force
+
+cd ~/sre-terraform/shared-state
+terraform init
+terraform destroy
+
+```
