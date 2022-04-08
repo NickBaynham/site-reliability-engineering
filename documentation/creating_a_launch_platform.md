@@ -98,4 +98,10 @@ git clone git@github.com:NickBaynham/sre-terraform.git
 
 ## 11. Provision the Cluster Infrastructure
 - Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/clusters/README.md
-- 
+
+## 12. Install and Configure AWS CLI
+```
+apt install awscli
+aws --version
+aws configure
+```
