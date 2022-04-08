@@ -64,7 +64,18 @@ unzip awscliv2.zip
 ./aws/install
 aws --version # currently 2.5.2
 ```
-### 6. Generating a new SSH Key
+
+## 6. Installing kubectl
+```
+apt-get update && apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
+apt-get update
+apt-get install -y kubectl
+kubectl version
+```
+
+### 7. Generating a new SSH Key
 References: 
 - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - https://superuser.com/questions/478798/running-ssh-keygen-without-human-interaction
@@ -76,12 +87,12 @@ ssh-add ~/.ssh/id_rsa
 - Add the public ssh key to your github account
 
 
-### 7. Clone the Terraform Repository
+### 8. Clone the Terraform Repository
 ```
 git clone git@github.com:NickBaynham/sre-terraform.git
 ```
 
-## 8. Git Configuration to push changes
+## 9. Git Configuration to push changes
 ```
  export git_user="Your Name"
  export git_email="you@example.com" # paraterized setup scripts
@@ -90,28 +101,28 @@ git clone git@github.com:NickBaynham/sre-terraform.git
  git push
 ```
 
-## 9. Provision Terraform State for each Cluster
+## 10. Provision Terraform State for each Cluster
 - Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/shared_state/README.md
 
-## 10. Provision the Cluster Network
+## 11. Provision the Cluster Network
 - Execute the steps in: https://github.com/NickBaynham/sre-terraform/tree/main/clusters-vpc
 
-## 11. Provision the Cluster Infrastructure
+## 12. Provision the Cluster Infrastructure
 - Execute the steps in: https://github.com/NickBaynham/sre-terraform/blob/main/clusters/README.md
 
-## 12. Install and Configure AWS CLI
+## 13. Install and Configure AWS CLI
 ```
 apt install awscli -y
 aws --version
 aws configure
 ```
-## 13. Retrieve the cluster kubeconfig file
+## 14. Retrieve the cluster kubeconfig file
 ```
 aws eks --region $(terraform output aws_region) update-kubeconfig --name $(terraform output cluster_full_name)
 terraform output authconfig | kubectl -n kube-system create -f -
 kubeconfig get nodes
 ```
-## 14. Cleaning Up and destroying infrastructure resources
+## 15. Cleaning Up and destroying infrastructure resources
 ```
 cd ~/sre-terraform/clusters
 terraform init
