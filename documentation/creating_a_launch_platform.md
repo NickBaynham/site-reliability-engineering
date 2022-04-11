@@ -135,6 +135,10 @@ terraform destroy
 # if you need to destory shared state:
 aws s3 rm s3://nbaynham-terraform_state --recursive
 aws s3 rm s3://nbaynham-vpc-terraform-state --recursive
+
+aws s3api delete-object --bucket nbaynham-terraform-state --key nbaynham-terraform-state
+aws s3api delete-object --bucket nbaynham-vpc-terraform-state --key nbaynham-vpc-terraform-state
+
 aws s3 rb s3://nbaynham-terraform-state --force
 aws s3 rb s3://nbaynham-vpc-terraform-state --force
 
