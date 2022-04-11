@@ -159,4 +159,5 @@ pip3 install virtualenv
 ## Installing Packer
 ```
 apt-get update && apt-get install packer -y
+packer --version
 ```
