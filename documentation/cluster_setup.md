@@ -21,6 +21,7 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+ kubectl version --client && kubeadm version
 ```
 Note: You must repeat the steps above on all of the nodes
 
