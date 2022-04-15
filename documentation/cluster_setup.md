@@ -22,3 +22,13 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 Note: You must repeat the steps above on all of the nodes
+
+## Setting up the control node
+```
+kubeadm init
+mkdir -p $HOME/kube
+sudo cp -I /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl cluster-info
+kubectl get nodes
+```
