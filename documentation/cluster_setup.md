@@ -24,11 +24,22 @@ sudo apt-mark hold kubelet kubeadm kubectl
 kubectl version --client && kubeadm version
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 swapoff -a
+sudo modprobe overlay
+sudo modprobe br_netfilter
+sudo tee /etc/sysctl.d/kubernetes.conf<<EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+EOF
+sysctl --system
+lsmod | grep br_netfilter
+systemctl enable kubelet
 ```
 Note: You must repeat the steps above on all of the nodes
 
 ## Setting up the control node
 ```
+kubeadm config images pull
 kubeadm init
 mkdir -p $HOME/kube
 sudo cp -I /etc/kubernetes/admin.conf $HOME/.kube/config
