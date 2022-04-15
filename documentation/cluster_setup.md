@@ -9,6 +9,7 @@ Reference: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm
 
 ```
 apt-get update
+apt -y upgrade
 apt-get install -y docker.io
 docker version
 free -m # check if swap is enabled
