@@ -61,4 +61,7 @@ kubectl get svc
 kubectl get po
 curl 137.184.155.28:31348
 ```
+## Remote kubectl
+- copy the .kube/config file to the host and install kubectl
+
 
