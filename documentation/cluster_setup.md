@@ -1,0 +1,24 @@
+# Cluster Setup
+Reference: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+- If using a VM, create the VM with 2CPU/2GB
+
+## Digital Ocean Example
+- Create a droplet 20.04 (LTS) Basic Regular 2 CPU/60 GB/3 TB tx
+- Access via the console
+- perform the following:
+
+```
+apt-get update
+apt-get install -y docker.io
+docker version
+free -m # check if swap is enabled
+ufw disable
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+Note: You must repeat the steps above on all of the nodes
