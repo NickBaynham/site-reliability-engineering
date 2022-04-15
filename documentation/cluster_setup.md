@@ -50,4 +50,15 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 kubectl get pods --all-namespaces
 kubectl get componentstatus
 ```
-Note: You must repeat the steps above on all of the nodes
+Note: You must repeat the steps above on all of the nodes except for the kubeadm init part
+
+## Test Drive with a Deployment
+```
+kubectl create deployment nginx --image=nginx
+kubectl describe deployment nginx
+kubectl create service nodeport nginx --tcp=80:80
+kubectl get svc
+kubectl get po
+curl 137.184.155.28:31348
+```
+
