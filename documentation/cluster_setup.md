@@ -21,7 +21,9 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
- kubectl version --client && kubeadm version
+kubectl version --client && kubeadm version
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+swapoff -a
 ```
 Note: You must repeat the steps above on all of the nodes
 
